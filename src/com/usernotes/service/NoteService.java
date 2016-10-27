@@ -25,6 +25,9 @@ public class NoteService {
 		return noteDao.getNote(id);
 	}
 
-	
+	@Transactional
+	public void deleteNote(int id) {
+		noteDao.deleteNote(id);
+	}
 }
 

@@ -38,7 +38,22 @@ public class NoteController {
 	public ResponseEntity<Note> getNoteById(@PathVariable("id") Integer id) {
 		Note note= noteService.getNote(id);
 //		System.out.println( note );
+		 if (note == null) {  
+	            System.out.println("Note with id " + id + " not found");  
+	            return new ResponseEntity<Note>(HttpStatus.NOT_FOUND);  
+	        } 
 		return new ResponseEntity<Note>(note, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/notes/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Note> deleteNote(@PathVariable("id") int id) {
+		Note note = noteService.getNote(id); 
+		  if (note == null) {  
+	            System.out.println("Unable to delete. User with id " + id + " not found");  
+	            return new ResponseEntity<Note>(HttpStatus.NOT_FOUND);  
+	        }
+		noteService.deleteNote(id);	
+		return new ResponseEntity<Note>(HttpStatus.NO_CONTENT);  
+	}	
 	
 }

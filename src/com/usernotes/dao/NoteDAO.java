@@ -29,8 +29,14 @@ public class NoteDAO {
 	public Note getNote(int id) {
 		Session session = this.sessionFactory.getCurrentSession();
 		Note note = (Note) session.load(Note.class, new Integer(id));
-			 
 		return note;
 	}
 
+	public void deleteNote(int id) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Note p = (Note) session.load(Note.class, new Integer(id));
+		if (null != p) {
+			session.delete(p);
+		}
+	}	
 }
