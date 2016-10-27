@@ -9,5 +9,27 @@
             <generator class="native" />
         </id>
       
+       <property name="email" type="java.lang.String" >
+            <column name="Email" />
+        </property>
+        
+        <property name="password" type="java.lang.String" >
+            <column name="Password" />
+        </property>
+
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" />
+        </property>
+        
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME" />
+        </property>
+        
+        <!--   <set name="notes" cascade="all" inverse="true" lazy="false">			
+			<key>
+				<column name="uid" not-null="true"></column>
+			</key>
+			<one-to-many class="com.usernotes.entities.Note"/>
+		</set>  --> 
     </class>
 </hibernate-mapping>

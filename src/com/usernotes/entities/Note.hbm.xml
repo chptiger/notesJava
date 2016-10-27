@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-7-22 11:21:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.usernotes.entities.Note">
+        
+        <id name="nid" type="java.lang.Integer">
+            <column name="nid" />
+            <generator class="native" />
+        </id>
+        
+        <property name="title" type="java.lang.String" >
+            <column name="Title" />
+        </property>
+        
+        <property name="note" type="java.lang.String" >
+            <column name="Note" />
+        </property>
+
+       <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" />
+        </property>
+        
+        <property name="updateTime" type="java.util.Date">
+            <column name="UPDATE_TIME" />
+        </property>
+   <!--     映射单向 n-1 的关联关系--> 
+        <many-to-one name="user" class="com.usernotes.entities.User" column="uid" cascade="save-update" lazy="false"></many-to-one> 
+       
+    </class>
+</hibernate-mapping>

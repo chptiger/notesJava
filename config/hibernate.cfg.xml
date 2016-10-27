@@ -10,7 +10,10 @@
 
 	<property name="hibernate.show_sql">true</property>
 	<property name="hibernate.hbm2ddl.auto">update</property>
+	
+	
 	<mapping resource="com/usernotes/entities/User.hbm.xml" />
+	<mapping resource="com/usernotes/entities/Note.hbm.xml" />
 
 </session-factory>
 </hibernate-configuration>
