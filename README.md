@@ -1,6 +1,16 @@
 # notesJava
 
-This project use Spring, Spring MVC, Hibernate, Jackson and MySql to build a RESTful API, following is the process.
+This project(notesDemoJava) uses Spring, Spring MVC, Hibernate, Jackson and MySql to build a RESTful API, following is the process. Spring is a powerful J2EE framework to build web application. Spring MVC is useful to provide a RESTful API.
+
+The design process is from database to classes and from classes to controller.
+
+From the document of new-hire-coding-chanllenge-java.docx, one user can have many notes and note access should be restricted the owner of the note.
+
+For that case, I have my database design method. I design two tables in the database, user and note. The table note has one foreign key uid to reference table user. The relationship bewteen note and user is many-to-one.
+
+From the database design, There are two classes in this project, note.java and user.java in notesDemoJava. many-to-one relationship is declared in the Note.hbm.xml. notesDemoJava provides CRUD operation for notes.
+
+Following is the process:
 
 1. add jar files for Spring, Spring MVC, Hivernate, Jackson and MySql.
 
@@ -34,5 +44,20 @@ This project use Spring, Spring MVC, Hibernate, Jackson and MySql to build a RES
 9. Hibernate is a ORM framework to manage object and table in database.
    Spring framework use many design pattern like sigleton, factory, dynamic proxy
 
-10. todo
+10.TODO
    add basic HTTP Authentication / JJWT token 
+   
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+
+
+	
