@@ -39,4 +39,15 @@ public class NoteDAO {
 			session.delete(p);
 		}
 	}	
+	
+	public Note addNote(Note note) {
+		Session session = this.sessionFactory.getCurrentSession();
+		session.persist(note);
+		return note;
+	}
+
+	public void updateNote(Note note) {
+		Session session = this.sessionFactory.getCurrentSession();
+		session.update(note);
+	}
 }

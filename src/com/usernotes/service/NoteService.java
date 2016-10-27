@@ -29,5 +29,16 @@ public class NoteService {
 	public void deleteNote(int id) {
 		noteDao.deleteNote(id);
 	}
+	
+	@Transactional
+	public void addNote(Note note) {
+		noteDao.addNote(note);
+	}
+
+	@Transactional
+	public void updateNote(Note note) {
+		noteDao.updateNote(note);
+
+	}
 }
 
