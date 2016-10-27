@@ -37,7 +37,7 @@ public class NoteController {
 	@RequestMapping(value = "/notes/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Note> getNoteById(@PathVariable("id") Integer id) {
 		Note note= noteService.getNote(id);
-		System.out.println( note );
+//		System.out.println( note );
 		return new ResponseEntity<Note>(note, HttpStatus.OK);
 	}
 	
