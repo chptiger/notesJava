@@ -11,4 +11,10 @@ public class HelloHandler {
 		System.out.println("HelloHandler constructor ********************************************************************************************************");
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="/helloworld", method=RequestMethod.GET)
+	public String hello(){
+		System.out.println("hello world.");
+		return "success";
+	}
 }
