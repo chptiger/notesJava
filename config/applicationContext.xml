@@ -9,8 +9,12 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
    
-   <!-- config and scan beans-->
+   <!-- config and scan beans not include @Controller-->
      <context:component-scan base-package="com.usernotes">
+    	<context:exclude-filter type="annotation" 
+			expression="org.springframework.stereotype.Controller"/>
+		<context:exclude-filter type="annotation" 
+			expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 	</context:component-scan>
    
    <!-- configure dataSource -->

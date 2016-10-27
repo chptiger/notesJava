@@ -24,7 +24,7 @@
       
     <!-- configure static source servlet -->
      <mvc:default-servlet-handler/>
-    <!-- 配置mvc:annotation-driven : -->
+    <!-- configure mvc:annotation-driven : -->
     <mvc:annotation-driven ></mvc:annotation-driven>	
 	
 </beans>

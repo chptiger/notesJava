@@ -21,7 +21,7 @@ public class TestService {
 		Session session = sessionFactory.getCurrentSession();
 
 		session.save(new User());
-//		 int a = 1 / 0; // 这行会抛异常
+//		 int a = 1 / 0; 
 		session.save(new User());
 	}
 }
